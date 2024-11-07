@@ -13,13 +13,13 @@ micp_localization:
       # merging on gpu or cpu
       combining_unit: cpu
       # maximum number of correction steps per second
-      # lower this to decrease the correction speed but save energy 
+      # lower this to decrease the correction speed but save energy
       corr_rate_max: 20.0
-      
+
       # adjust max distance dependend of the state of localization
       adaptive_max_dist: True # enable adaptive max dist
 
-      # DEBUGGING   
+      # DEBUGGING
       # corr = correspondences
       viz_corr: True
       # corr = correction
@@ -28,14 +28,14 @@ micp_localization:
 
       # initial pose changes
       trans: [0.0, 0.0, 0.0]
-      rot: [0.0, 0.0, 0.0] # euler angles (3) or quaternion (4) 
+      rot: [0.0, 0.0, 0.0] # euler angles (3) or quaternion (4)
 
     # describe your sensor setup here
     sensors: # list of range sensors - at least one is required
       laser3d:
-        topic: cloud
+        topic: /Spot/Velodyne_Puck/point_cloud
         topic_type: sensor_msgs/msg/PointCloud2
-        # normally it could also be a more memory-friendly spherical sensor model. 
+        # normally it could also be a more memory-friendly spherical sensor model.
         # However, I dont trust the Gazebo sensor
         type: o1dn
         model:

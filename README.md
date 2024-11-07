@@ -18,14 +18,29 @@ Mesh Navigation Tutorials
 
 <br/>
 
-This repository contains a set of examples to quickly and easily start with [mesh_navigation](https://github.com/naturerobots/mesh_navigation). 
+This repository contains a set of examples to quickly and easily start with [mesh_navigation](https://github.com/naturerobots/mesh_navigation).
 We provide different scenarios where our approach excels over state-of-the art 2D or 2.5D approaches.
 We will explain different parameter sets in more detail and show how to fine-tune [mesh_navigation](https://github.com/naturerobots/mesh_navigation) in various scenarios.
 Our example worlds consists of both real-world and hand-modelled scenarios.
 With the hand-modelled examples we particularly aim to support low-end computers or laptops.
 
 
-*Note*: Because of an great interest of people we talked to, we decided to release this repository in an unfinished state. It is still under construction and will be extended by more synthetic and real-world recorded worlds and detailed docs. It's open-source: Feel free to contribute.  
+*Note*: Because of an great interest of people we talked to, we decided to release this repository in an unfinished state. It is still under construction and will be extended by more synthetic and real-world recorded worlds and detailed docs. It's open-source: Feel free to contribute.
+
+## Target
+This fork targets to deploy `mesh_navigation` in the [Webots Spot Simulation](https://github.com/MASKOR/webots_ros2_spot).
+
+### Current Errors
+Used map `webots_maze_blender.h5`
+
+
+```
+[mbf_mesh_nav-2] [ERROR] [1730991273.860198877] [move_base_flex]: Layer "roughness" contains NaN values!
+
+[rviz2-3] [ERROR] [1730991273.879830543] [rviz_mesh_tools_plugins]: Could not find material '0_TexturedMesh_0_8400NormalMaterial' to unload. skipping
+
+[rviz2-3] [ERROR] [1730991274.037323394] [rviz_mesh_tools_plugins]: Illegal vertex cost limits!
+```
 
 ## Requirements and Installation
 
@@ -44,7 +59,7 @@ With the hand-modelled examples we particularly aim to support low-end computers
 ros2 launch mesh_navigation_tutorials mesh_navigation_tutorial_launch.py world_name:=floor_is_lava
 ```
 
-You change `floor_is_lava` by any world name that is available with this repository (see all by calling launch file with `--show-args`). Those are: 
+You change `floor_is_lava` by any world name that is available with this repository (see all by calling launch file with `--show-args`). Those are:
 
 | Name | World | Default Map | Description |
 |------|-------|-----|-------------|
@@ -66,7 +81,7 @@ The MbfGoalActions rviz plugin contains a very tiny state machine that performs 
 * get a path to that pose
 * execute that path
 
-## Detailed Instructions 
+## Detailed Instructions
 
 For more detailed instructions on how to parameterize things or what things can be changed see the [wiki](https://github.com/naturerobots/mesh_navigation_tutorials/wiki)
 

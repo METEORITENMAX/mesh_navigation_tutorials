@@ -15,17 +15,17 @@ ekf_filter_node:
                     false, false, false, # rpy
                     true, false, false, #vxyz
                     false, false, true, #vrpy
-                    false, false, false] #axyz 
+                    false, false, false] #axyz
 
     odom0_differential: false
     # odom0_relative: true
 
-    imu0: /imu/data
+    imu0: /Spot/imu
     imu0_config: [false,  false,  false, #xyz
                     false, false, false, # rpy
                     false, false, false, #vxyz
                     true, true, true, #vrpy
-                    false, false, false] #axyz 
+                    false, false, false] #axyz
     imu0_differential: false
 
     use_control: false
@@ -56,7 +56,7 @@ ekf_filter_node:
     # imu0_relative: true
 
     # imu0_remove_gravitational_acceleration: true
-    
+
     # process_noise_covariance: [0.01, 0.0,    0.0,    0.0,    0.0,    0.0,    0.0,     0.0,     0.0,    0.0,    0.0,    0.0,    0.0,    0.0,    0.0,
     #                            0.0,    0.01, 0.0,    0.0,    0.0,    0.0,    0.0,     0.0,     0.0,    0.0,    0.0,    0.0,    0.0,    0.0,    0.0,
     #                            0.0,    0.0,    0.2, 0.0,    0.0,    0.0,    0.0,     0.0,     0.0,    0.0,    0.0,    0.0,    0.0,    0.0,    0.0,
