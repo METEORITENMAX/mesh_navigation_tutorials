@@ -62,7 +62,7 @@ def generate_launch_description():
             "map_name",
             description="Name of the map to be used for navigation"
             + '(see mesh_navigation_tutorials\' "maps" directory).',
-            default_value="webots_maze_blender",
+            default_value="webots_arena",
             choices=available_map_names,
         ),
         DeclareLaunchArgument(
@@ -86,7 +86,7 @@ def generate_launch_description():
     # suggestion:
     # - every world has one map with same name as default
     # - only if map_name is specified another map than default is loaded
-    # map_name = world_name
+    world_name = 'webots_arena'
 
     # Launch simulation environment and robot
     simulation = IncludeLaunchDescription(
@@ -190,7 +190,7 @@ def generate_launch_description():
         + [
             #simulation,
             ekf,
-            #map_loc_gt,
+            map_loc_gt,
             map_loc_rmcl_micp,
             move_base_flex,
             rviz,
