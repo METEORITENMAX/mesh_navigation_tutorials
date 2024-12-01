@@ -62,7 +62,7 @@ def generate_launch_description():
             "map_name",
             description="Name of the map to be used for navigation"
             + '(see mesh_navigation_tutorials\' "maps" directory).',
-            default_value="webots_arena",
+            default_value="parking_garage_s4",
             choices=available_map_names,
         ),
         DeclareLaunchArgument(
@@ -118,8 +118,8 @@ def generate_launch_description():
         parameters=[
             {
                 "use_sim_time": True,
-                "gz_parent_frame": world_name,
-                "gz_child_frame": "robot",
+                "gz_parent_frame": 'map',
+                "gz_child_frame": "odom",
                 "ros_parent_frame": "map",
                 "ros_child_frame": "base_footprint",
                 "ros_odom_frame": "odom",
@@ -189,9 +189,9 @@ def generate_launch_description():
         launch_args
         + [
             #simulation,
-            ekf,
-            map_loc_gt,
-            map_loc_rmcl_micp,
+            #ekf,
+            #map_loc_gt,
+            #map_loc_rmcl_micp,
             move_base_flex,
             rviz,
         ]
